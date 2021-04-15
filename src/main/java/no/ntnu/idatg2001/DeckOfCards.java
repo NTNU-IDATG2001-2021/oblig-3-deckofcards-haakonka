@@ -2,6 +2,8 @@ package no.ntnu.idatg2001;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class DeckOfCards {
     private final ArrayList<PlayingCard> deck = new ArrayList<>();
@@ -39,6 +41,48 @@ public class DeckOfCards {
             hand.add(deck.get(i));
             deck.removeAll(hand);
         }
+    }
+
+    public boolean flush()
+    {
+        return hand.stream().filter(card -> card.getSuit() == 'S').count() >= 5 ||
+                hand.stream().filter(card -> card.getSuit() == 'H').count() >= 5 ||
+                hand.stream().filter(card -> card.getSuit() == 'C').count() >= 5 ||
+                hand.stream().filter(card -> card.getSuit() == 'D').count() >= 5;
+    }
+
+    public List<PlayingCard> amountOfHearts()
+    {
+
+        return hand.stream().filter(card -> card.getSuit() == 'H').collect(Collectors.toList());
+
+    }
+
+    public String hearts(List<PlayingCard> cardsToCheck)
+    {
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (PlayingCard playingCard : cardsToCheck)
+        {
+            stringBuilder.append(playingCard.getAsString()).append(" ");
+        }
+
+        if (cardsToCheck.size()==0){
+            stringBuilder.append("No hearts in sight!");}
+
+
+        return stringBuilder.toString();
+    }
+
+    public int calculateSumOfFaces()
+    {
+        return hand.stream().map(PlayingCard::getFace).reduce(0, Integer::sum);
+    }
+
+    public boolean hasQueenOfSpades()
+    {
+        return hand.stream().anyMatch(card -> card.getAsString().equalsIgnoreCase("12S"));
     }
 
 

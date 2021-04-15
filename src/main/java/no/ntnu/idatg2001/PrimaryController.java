@@ -56,7 +56,10 @@ public class PrimaryController {
 
         @FXML
         void checkHand(){
-
+            flushTextField.setText(deckOfCards.flush() ? "Flush!" : "No flush");
+            sumTextField.setText(String.valueOf(deckOfCards.calculateSumOfFaces()));
+            s12TextField.setText(deckOfCards.hasQueenOfSpades() ? "Queen of spades on hand" : "No queen of spades");
+            heartsTextField.setText(deckOfCards.amountOfHearts().size() > 0 ? deckOfCards.hearts(deckOfCards.amountOfHearts()) : "No hearts");
         }
 
         @FXML
