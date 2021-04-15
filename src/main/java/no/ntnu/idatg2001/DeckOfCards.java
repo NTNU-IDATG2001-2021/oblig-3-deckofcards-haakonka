@@ -1,6 +1,7 @@
 package no.ntnu.idatg2001;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DeckOfCards {
     private final ArrayList<PlayingCard> deck = new ArrayList<>();
@@ -17,4 +18,29 @@ public class DeckOfCards {
 
         }
     }
+    public ArrayList<PlayingCard> getHand() {
+        return hand;
+    }
+
+    public void shuffle(){
+        Collections.shuffle(deck);
+    }
+
+    //A method to deal a hand. Acquires randomness by having a shuffled deck
+    public void dealHand(int i){
+        //checks that there are enough cards in the deck
+        if (i>deck.size()){
+            throw new IllegalArgumentException("There are not enough cards in the deck!");
+        }
+        //clears the hand
+        hand.clear();
+        //moves the top 5 cards in the deck to hand
+        for (i = 0; i<5; i++){
+            hand.add(deck.get(i));
+            deck.removeAll(hand);
+        }
+    }
+
+
+
 }
