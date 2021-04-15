@@ -1,4 +1,4 @@
-package no.ntnu.idatg2001;
+package no.ntnu.idatg2001.cards;
 
 
 import javafx.scene.image.Image;

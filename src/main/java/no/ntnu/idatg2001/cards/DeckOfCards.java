@@ -1,4 +1,6 @@
-package no.ntnu.idatg2001;
+package no.ntnu.idatg2001.cards;
+
+import no.ntnu.idatg2001.cards.PlayingCard;
 
 import java.util.ArrayList;
 import java.util.Collections;
