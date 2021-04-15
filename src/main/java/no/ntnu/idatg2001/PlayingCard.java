@@ -1,6 +1,8 @@
 package no.ntnu.idatg2001;
 
 
+import javafx.scene.image.Image;
+
 /**
  * Represents a playing card. A playing card has a number (face) between
  * 1 and 13, where 1 is called an Ace, 11 = Knight, 12 = Queen and 13 = King.
@@ -10,7 +12,7 @@ package no.ntnu.idatg2001;
  * @version 2020-01-10
  */
 public class PlayingCard {
-
+    private Image image;
     private final char suit; // 'S'=spade, 'H'=heart, 'D'=diamonds, 'C'=clubs
     private int face; // a number between 1 and 13
 
@@ -25,7 +27,8 @@ public class PlayingCard {
     public PlayingCard(char suit, int face) {
         this.suit = suit;
         this.face = face;
-
+        String fileName = this.getAsString() +".png";
+        image = new Image("/images/" + fileName);
     }
 
     /**
@@ -57,4 +60,14 @@ public class PlayingCard {
     public int getFace() {
         return face;
     }
+
+    /**
+     * Returns the image of the card ( with face and suit)
+     * @return the card image
+     */
+    public Image getImage() {
+
+        return image;
+    }
+
 }
