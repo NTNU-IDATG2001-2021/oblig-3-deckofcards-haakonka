@@ -19,10 +19,12 @@ public class PlayingCard {
 
     /**
      * Creates an instance of a PlayingCard with a given suit and face.
+     * Sets the image of the card according to the suit and faces
      *
      * @param suit The suit of the card, as a single character. 'S' for Spades,
      *             'H' for Heart, 'D' for Diamonds and 'C' for clubs
      * @param face The face value of the card, an integer between 1 and 13
+     *
      */
     public PlayingCard(char suit, int face) {
         this.suit = suit;

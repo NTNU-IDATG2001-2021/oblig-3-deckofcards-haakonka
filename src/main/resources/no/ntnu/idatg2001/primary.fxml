@@ -8,7 +8,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.ntnu.idatg2001.PrimaryController">
    <children>
       <ImageView fx:id="visibleCardImageView" fitHeight="181.5" fitWidth="125.0" layoutX="50.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="715.0" layoutY="36.0" mnemonicParsing="false" onAction="#showCard" prefHeight="25.0" prefWidth="78.0" text="Deal hand" />
+      <Button layoutX="715.0" layoutY="36.0" mnemonicParsing="false" onAction="#dealHand" prefHeight="25.0" prefWidth="78.0" text="Deal hand" />
       <ImageView fx:id="visibleCardImageView2" fitHeight="181.5" fitWidth="125.0" layoutX="200.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="visibleCardImageView3" fitHeight="181.5" fitWidth="125.0" layoutX="350.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="visibleCardImageView4" fitHeight="181.5" fitWidth="125.0" layoutX="500.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
