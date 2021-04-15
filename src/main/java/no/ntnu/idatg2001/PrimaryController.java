@@ -1,7 +1,5 @@
 package no.ntnu.idatg2001;
 
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -39,7 +37,9 @@ public class PrimaryController {
 
         @FXML
         void showCard(ActionEvent event) {
+            clearTextFields();
             try{
+
                 deckOfCards.dealHand(5);
 
                 visibleCardImageView.setImage(deckOfCards.getHand().get(0).getImage());
@@ -65,13 +65,16 @@ public class PrimaryController {
         @FXML
         void newDeck(){
 
+            clearTextFields();
+
+            this.deckOfCards = new DeckOfCards();
+            deckOfCards.shuffle();
+        }
+        @FXML void clearTextFields(){
             flushTextField.clear();
             s12TextField.clear();
             sumTextField.clear();
             heartsTextField.clear();
-
-            this.deckOfCards = new DeckOfCards();
-            deckOfCards.shuffle();
         }
 
         public void initialize(){
