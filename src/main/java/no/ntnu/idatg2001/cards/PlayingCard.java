@@ -12,14 +12,12 @@ import javafx.scene.image.Image;
  * @version 2020-01-10
  */
 public class PlayingCard {
-    private Image image;
     private final char suit; // 'S'=spade, 'H'=heart, 'D'=diamonds, 'C'=clubs
     private int face; // a number between 1 and 13
 
 
     /**
      * Creates an instance of a PlayingCard with a given suit and face.
-     * Sets the image of the card according to the suit and faces
      *
      * @param suit The suit of the card, as a single character. 'S' for Spades,
      *             'H' for Heart, 'D' for Diamonds and 'C' for clubs
@@ -29,9 +27,7 @@ public class PlayingCard {
     public PlayingCard(char suit, int face) {
         this.suit = suit;
         this.face = face;
-        String fileName = this.getAsString() +".png";
-        image = new Image("/images/" + fileName);
-    }
+            }
 
     /**
      * Returns the suit and face of the card as a string.
@@ -63,13 +59,5 @@ public class PlayingCard {
         return face;
     }
 
-    /**
-     * Returns the image of the card ( with face and suit)
-     * @return the card image
-     */
-    public Image getImage() {
-
-        return image;
-    }
 
 }
